@@ -1,0 +1,19 @@
+<h1>Login</h1>
+<% provide(:title, "Log in") %>
+<%= form_for :session, url: login_path do |f| %>
+	<div class= "form-control">
+		<%= f.label :email, class: "col-sm-1 control-label" %>
+		<%= f.email_field :email, class: "col-sm-5" %>
+	</div>
+	<div class= "form-control">
+		<%= f.label :password, class: "col-sm-1 control-label" %>
+		<%= f.password_field :password, class: "col-sm-5" %>
+	</div>
+	<br><%= f.submit "log in", class: "btn btn-primary col-sm-4 col-sm-offset-1" %><br><br>
+	<div>	
+		<%= link_to "Forget password?", logout_path, method: :delete %><br> 
+		<%= link_to "Sign up?", new_user_path %>
+	</div>
+<% end %>
+
+

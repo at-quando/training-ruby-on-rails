@@ -37,6 +37,17 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
+  config.action_mailer.perform_deliveries = true
+# config.action_mailer.default_url_options = { host: config.app_domain }
+  ActionMailer::Base.smtp_settings = {
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :authentication => :plain,
+      :domain => 'newbook.com',
+      :user_name => 'dhquan1910@gmail.com',
+      :password => 'quando1910'
+
+  }
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
